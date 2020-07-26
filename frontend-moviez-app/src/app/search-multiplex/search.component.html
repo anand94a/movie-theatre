@@ -1,0 +1,29 @@
+<div class="multiplex-search">
+    <mat-form-field class="inputField">
+        <mat-label>Filter</mat-label>
+        <input matInput (keyup)="applyFilter($event)" #input>
+    </mat-form-field>
+    <div class="example-container">
+        <mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+            <ng-container matColumnDef="Name">
+                <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.multiplexName}} </mat-cell>
+            </ng-container>
+
+
+            <ng-container matColumnDef="City">
+                <mat-header-cell *matHeaderCellDef> City </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.city}} </mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="Number of Screens">
+                <mat-header-cell *matHeaderCellDef> Number Of Screens </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.numberOfScreens}} </mat-cell>
+            </ng-container>
+
+            <mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></mat-header-row>
+            <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+        </mat-table>
+    </div>
+</div>

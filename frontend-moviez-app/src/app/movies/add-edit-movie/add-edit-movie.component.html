@@ -1,0 +1,52 @@
+<mat-card class="movieContainer">
+  <form [formGroup]="movieFormGroup">
+    <mat-form-field appearance="fill">
+      <mat-label>Movie Name</mat-label>
+      <input matInput formControlName="movieName" required>
+      <mat-error>This field is mandatory.</mat-error>
+    </mat-form-field>
+    <br />
+
+    <mat-form-field appearance="fill">
+      <mat-label>Movie Category</mat-label>
+      <input matInput formControlName="movieCategory" required>
+      <mat-error>This field is mandatory.</mat-error>
+    </mat-form-field>
+    <br />
+
+    <mat-form-field appearance="fill">
+      <mat-label>Producer</mat-label>
+      <input matInput formControlName="producer" required>
+      <mat-error>This field is mandatory.</mat-error>
+    </mat-form-field>
+    <br />
+
+    <mat-form-field appearance="fill">
+      <mat-label>Director</mat-label>
+      <input matInput formControlName="director" required>
+      <mat-error>This field is mandatory.</mat-error>
+    </mat-form-field>
+    <br />
+
+
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Choose a date</mat-label>
+      <input matInput [matDatepicker]="picker" formControlName="releaseDate">
+      <mat-datepicker-toggle matSuffix [for]="picker">
+        <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
+      </mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+
+    <br />
+
+    <span style="margin-left: 6px;"></span>
+    <button mat-raised-button color="accent" [disabled]="!movieFormGroup.valid" (click)="saveMovie()">Save</button>
+    <span class="spacer"></span>
+    <button mat-raised-button color="warn" [disabled]="!movieFormGroup.valid" (click)="clearData()">Clear Data</button>
+    <span class="spacer"></span>
+    <button mat-raised-button color="primary" (click)="cancel()" style="margin-top: 10px;">Cancel</button>
+
+  </form>
+
+</mat-card>

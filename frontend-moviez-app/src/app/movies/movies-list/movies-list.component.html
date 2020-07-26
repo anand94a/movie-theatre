@@ -1,0 +1,50 @@
+<div class="example-container mat-elevation-z8">
+  <mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+    <ng-container matColumnDef="Name">
+      <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.movieName}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="Category">
+      <mat-header-cell *matHeaderCellDef> Category </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.movieCategory}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="Producer">
+      <mat-header-cell *matHeaderCellDef> Producer </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.producer}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="Director">
+      <mat-header-cell *matHeaderCellDef> Director </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.director}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="ReleaseDate">
+      <mat-header-cell *matHeaderCellDef> Release Date </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.releaseDate | date }} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="Edit">
+      <mat-header-cell *matHeaderCellDef> Edit </mat-header-cell>
+      <mat-cell *matCellDef="let element">
+        <button mat-icon-button color="primary" (click)="editMovieDetails(element)">
+          <mat-icon>create</mat-icon>
+        </button>
+      </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="Delete">
+      <mat-header-cell *matHeaderCellDef> Delete </mat-header-cell>
+      <mat-cell *matCellDef="let element">
+        <button mat-icon-button color="warn" (click)="deleteMovieDetails(element)">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+  </mat-table>
+</div>

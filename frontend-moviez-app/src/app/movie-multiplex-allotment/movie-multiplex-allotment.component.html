@@ -1,0 +1,53 @@
+<div class="allotmentContainer">
+  <mat-card class="allot">
+    <h1>Allot the Movie to the Multiplex</h1>
+    <form [formGroup]="allotmentFormGroup">
+      <mat-form-field appearance="fill">
+        <mat-label>Movie Name</mat-label>
+        <mat-select formControlName="movieName">
+          <mat-option *ngFor="let movie of movies" [value]="movie.movieName">
+            {{movie.movieName}}
+          </mat-option>
+        </mat-select>
+        <mat-error>This field is mandatory.</mat-error>
+      </mat-form-field>
+      <br />
+
+      <mat-form-field appearance="fill">
+        <mat-label>Mulltiplex Name</mat-label>
+        <mat-select formControlName="multiplexName">
+          <mat-option (onSelectionChange)="fetchDetails($event)" *ngFor="let multi of multiplex"
+            [value]="multi.multiplexName">
+            {{multi.multiplexName}}
+          </mat-option>
+        </mat-select>
+        <mat-error>This field is mandatory.</mat-error>
+      </mat-form-field>
+      <br />
+
+      <mat-form-field appearance="fill">
+        <mat-label>City</mat-label>
+        <mat-select formControlName="city">
+          <mat-option [value]="city">
+            {{city}}
+          </mat-option>
+        </mat-select>
+        <mat-error>This field is mandatory.</mat-error>
+      </mat-form-field>
+      <br />
+
+      <mat-form-field appearance="fill">
+        <mat-label>Screen number</mat-label>
+        <mat-select formControlName="screenNumber">
+          <mat-option *ngFor="let screen of setOfScreens" [value]="screen">
+            {{screen}}
+          </mat-option>
+        </mat-select>
+        <mat-error>This field is mandatory.</mat-error>
+      </mat-form-field>
+      <br />
+      <button mat-raised-button color="accent" (click)="submit()">Allot</button> &nbsp;&nbsp;&nbsp;
+      &nbsp;&nbsp;&nbsp;&nbsp;<button mat-raised-button color="warn" (click)="cancel()">Cancel</button><br /><br />
+    </form>
+  </mat-card>
+</div>

@@ -1,0 +1,14 @@
+.example-container {
+  height: 400px;
+  overflow: auto;
+}
+
+  .mat-form-field {
+    font-size: 14px;
+    width: 100%;
+  }
+
+  .multiplex-search {
+    margin: 0.8%;
+  }
+

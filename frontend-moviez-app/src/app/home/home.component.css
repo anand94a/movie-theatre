@@ -1,0 +1,24 @@
+table {
+    width: 100%;
+  }
+  
+  .mat-form-field {
+    font-size: 14px;
+    width: 100%;
+  }
+
+  .home {
+    width: auto;
+    height: auto;  
+    margin: 1%
+  }
+
+  .example-radio-group {
+    display: flex;
+    flex-direction: row;
+    margin: 15px 0;
+  }
+  
+  .example-radio-button {
+    margin: 5px;
+  }

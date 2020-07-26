@@ -1,0 +1,41 @@
+<div class="allotment-list">
+    <mat-form-field class="inputField">
+        <mat-label>Filter</mat-label>
+        <input matInput (keyup)="applyFilter($event)" placeholder="Ex. ium" #input>
+    </mat-form-field>
+    <div class="example-container">
+        <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+
+            <ng-container matColumnDef="Movie Name">
+                <th mat-header-cell *matHeaderCellDef> Movie Name </th>
+                <td mat-cell *matCellDef="let element"> {{element.movieName}} </td>
+            </ng-container>
+
+
+            <ng-container matColumnDef="Multiplex Name">
+                <th mat-header-cell *matHeaderCellDef> Multiplex Name </th>
+                <td mat-cell *matCellDef="let element"> {{element.multiplexName}} </td>
+            </ng-container>
+
+
+            <ng-container matColumnDef="Screen Number">
+                <th mat-header-cell *matHeaderCellDef> Screen Number </th>
+                <td mat-cell *matCellDef="let element"> {{element.screenNumber}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="City">
+                <th mat-header-cell *matHeaderCellDef> City </th>
+                <td mat-cell *matCellDef="let element"> {{element.city}} </td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+
+            <tr class="mat-row" *matNoDataRow>
+                <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+            </tr>
+        </table>
+    </div>
+</div>

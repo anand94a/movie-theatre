@@ -1,0 +1,16 @@
+.example-spacer {
+    flex: 1 1 auto;
+  }
+  
+  .spacer {
+    margin-left: 2%;
+  }
+
+  .textDecorator {
+    font-size: medium;
+    font-style: italic;
+  }
+
+  .header {
+    width: 100%;
+  }

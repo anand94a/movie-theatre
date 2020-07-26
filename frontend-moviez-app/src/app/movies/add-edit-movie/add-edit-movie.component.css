@@ -1,0 +1,17 @@
+.movieContainer {
+    margin: auto;
+    width: 18%;
+    margin-top: 25px;
+  }
+  
+  .spacer {
+    margin-left: 4.5%;
+  }
+  
+  .spacer-right {
+    margin-right: 68%;
+  }
+
+  .mat-form-field {
+    width: 100% !important;
+}

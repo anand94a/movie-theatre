@@ -1,0 +1,40 @@
+<div class="example-container mat-elevation-z8">
+  <mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+    <ng-container matColumnDef="Name">
+      <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.multiplexName}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="City">
+      <mat-header-cell *matHeaderCellDef> City </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.city}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="Number of Screens">
+      <mat-header-cell *matHeaderCellDef> Number Of Screens </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.numberOfScreens}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="Edit">
+      <mat-header-cell *matHeaderCellDef> Edit </mat-header-cell>
+      <mat-cell *matCellDef="let element">
+        <button mat-icon-button color="primary" (click)="editMovieDetails(element)">
+          <mat-icon>create</mat-icon>
+        </button>
+      </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="Delete">
+      <mat-header-cell *matHeaderCellDef> Delete </mat-header-cell>
+      <mat-cell *matCellDef="let element">
+        <button mat-icon-button color="warn" (click)="deleteMovieDetails(element)">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+  </mat-table>
+</div>

@@ -1,0 +1,13 @@
+<div id="home">
+    <mat-card style="margin: auto;">
+        <mat-card-content>
+            <label id="example-radio-group-label">Search base on the below options</label>
+            <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group">
+                <mat-radio-button class="example-radio-button" *ngFor="let type of types" [value]="type" (change)="changeRoute($event)">
+                    {{type}}
+                </mat-radio-button>
+            </mat-radio-group>
+        </mat-card-content>
+    </mat-card><br>
+    <router-outlet></router-outlet>
+</div>

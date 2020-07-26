@@ -1,0 +1,16 @@
+.example-container {
+    height: 400px;
+    overflow: auto;
+  }
+  
+  table {
+    width: 100%;
+  }
+
+.inputField {
+    width: 100%;
+}
+
+.allotment-list {
+  margin: 0.8%;
+}

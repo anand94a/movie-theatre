@@ -1,0 +1,22 @@
+<mat-toolbar class="header" color="primary" class="mat-elevation-z6">
+  <button mat-icon-button class="example-icon">
+    <mat-icon>theaters</mat-icon>
+  </button>
+  <span>Moviez</span>
+  <span class="spacer"> </span>
+  <a mat-button routerLink="/home">Home</a>
+  <a mat-button routerLink="/movies/moviesList">Movies</a>
+  <a mat-button routerLink="/multiplex/multiplexList">Multiplex</a>
+  <a mat-button routerLink="/allot">Allotment</a>
+
+  <span class="example-spacer"></span>
+  <button mat-icon-button class="example-icon" *ngIf="isLoggedIn">
+    <mat-icon>person</mat-icon>
+  </button>
+  <span class="textDecorator" *ngIf="isLoggedIn">Welcome, {{userName}} &nbsp;&nbsp;&nbsp;&nbsp;</span>
+  <button *ngIf="!isLoggedIn" mat-raised-button color="accent" routerLink="/login">Login</button>
+  <button *ngIf="isLoggedIn" mat-raised-button color="accent" (click)="logout()">Logout</button>
+
+</mat-toolbar>
+
+<router-outlet></router-outlet>
